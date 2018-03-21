@@ -17,6 +17,11 @@ class MainWidget : public QWidget
 
 	private:
 		Ui::MainWidget *ui;
+
+	public slots:
+
+		void slotNewExamination( );
+		void slotScanSIC( );
 };
 
 #endif // MAINWIDGET_HPP
