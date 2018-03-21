@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>493</width>
-    <height>406</height>
+    <width>497</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWidget</string>
+   <string>Visus Test Wrapper</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -19,116 +19,58 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="Behavior">
+     <widget class="QWidget" name="widgetNewExamination">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>479</width>
+        <height>266</height>
+       </rect>
+      </property>
       <attribute name="label">
-       <string>Behavior</string>
+       <string>New Examination</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="0">
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="groupBox">
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBoxNewExamination">
          <property name="title">
-          <string>Control of data in/out access</string>
+          <string>new examination</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="2" column="1">
-           <widget class="QRadioButton" name="radioButtonRandomAccess">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButtonNewExamination">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>100</height>
+             </size>
+            </property>
             <property name="text">
-             <string>random access</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>User control of data input/output.</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QRadioButton" name="radioButtonSequential">
-            <property name="text">
-             <string>sequentiell</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
+             <string>start new examination</string>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="NewProband">
+     <widget class="QWidget" name="widgetScanSIC">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>475</width>
-        <height>286</height>
+        <width>479</width>
+        <height>266</height>
        </rect>
       </property>
       <attribute name="label">
        <string>New Proband</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5">
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="groupBox_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBoxScanSIC">
          <property name="title">
           <string>Scan SIC from Running Chit!</string>
          </property>
@@ -137,7 +79,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="labelSICTxt">
             <property name="text">
              <string>SIC:</string>
             </property>
@@ -147,7 +89,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="labelSICVal">
             <property name="font">
              <font>
               <pointsize>20</pointsize>
@@ -167,58 +109,6 @@
          </layout>
         </widget>
        </item>
-       <item row="0" column="1">
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="0">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="1">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="pageExamination">
@@ -226,29 +116,16 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>475</width>
-        <height>286</height>
+        <width>479</width>
+        <height>266</height>
        </rect>
       </property>
       <attribute name="label">
        <string>Examination</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="1">
-        <spacer name="verticalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="1">
-        <widget class="QGroupBox" name="groupBox_3">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBoxExamination">
          <property name="title">
           <string>Planed Examinations</string>
          </property>
@@ -256,75 +133,136 @@
           <set>Qt::AlignCenter</set>
          </property>
          <layout class="QGridLayout" name="gridLayout_7">
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_3">
+          <item row="4" column="2">
+           <widget class="QLabel" name="labelODWithHoleApertue">
+            <property name="text">
+             <string>still no value measured</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="labelOSWithoutHoleApertue">
+            <property name="text">
+             <string>still no value measured</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QPushButton" name="pushButtonODWithHoleApertue">
             <property name="text">
              <string>Visus OD with Hole Aperture</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton">
+          <item row="4" column="0">
+           <widget class="QPushButton" name="pushButtonODWithoutHoleApertue">
             <property name="text">
              <string>Visus OD without Hole Aperture</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_2">
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButtonOSWithoutHoleApertue">
             <property name="text">
              <string>Visus OS without Hole Aperture</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_4">
+          <item row="5" column="0">
+           <widget class="QPushButton" name="pushButtonOSWithHoleApertue">
             <property name="text">
              <string>Visus OS with Hole Aperture</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="labelOSWithHoleApertue">
+            <property name="text">
+             <string>still no value measured</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QLabel" name="labelODWithoutHoleApertue">
+            <property name="text">
+             <string>still no value measured</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="labelVisus">
+            <property name="text">
+             <string>Visus</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelProgram">
+            <property name="text">
+             <string>Program</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageSummaries">
+      <attribute name="label">
+       <string>Summary</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>0</number>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="1">
-        <spacer name="verticalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
+         <widget class="QWidget" name="tabSummaryCurrentExamination">
+          <attribute name="title">
+           <string>Summary Current Examination</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="groupBoxSummaryCurrentExamination">
+             <property name="title">
+              <string>summary of all measurements</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QTableView" name="tableViewSummaryCurrentExamination"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabSummaryAllExaminations">
+          <attribute name="title">
+           <string>Summary Current Examination</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="groupBoxSummaryAllExaminations">
+             <property name="title">
+              <string>summary of all measurements</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_10">
+              <item row="0" column="0">
+               <widget class="QTableView" name="tableViewSummaryAllExaminations"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </item>
       </layout>
      </widget>
