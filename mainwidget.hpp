@@ -21,7 +21,8 @@ class MainWidget : public QWidget
 	public slots:
 
 		void slotNewExamination( );
-		void slotScanSIC( );
+        void slotScanSIC( );
+        void slotFinishExamination( );
 };
 
 #endif // MAINWIDGET_HPP

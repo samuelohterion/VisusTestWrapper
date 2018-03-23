@@ -6,49 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>509</width>
-    <height>521</height>
+    <width>565</width>
+    <height>494</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Visus Test Wrapper</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>&lt;a href=&quot;www.michaelbach.de/misc/fat1/index-de.html&quot;&gt;Visus Text by Prof. Michael Bach&lt;/a&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::RichText</enum>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-     <property name="textInteractionFlags">
-      <set>Qt::TextBrowserInteraction</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
+   <item row="3" column="0" colspan="2">
     <widget class="QToolBox" name="toolBox">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="widgetNewExamination">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>491</width>
-        <height>341</height>
+        <width>547</width>
+        <height>306</height>
        </rect>
       </property>
       <attribute name="label">
@@ -125,8 +102,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>491</width>
-        <height>341</height>
+        <width>547</width>
+        <height>306</height>
        </rect>
       </property>
       <attribute name="label">
@@ -206,8 +183,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>491</width>
-        <height>341</height>
+        <width>533</width>
+        <height>316</height>
        </rect>
       </property>
       <attribute name="label">
@@ -279,6 +256,9 @@
             </property>
            </widget>
           </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QPlainTextEdit" name="plainTextEdit"/>
+          </item>
           <item row="0" column="1">
            <widget class="QLabel" name="labelVisus">
             <property name="text">
@@ -312,21 +292,12 @@
             </property>
            </spacer>
           </item>
-          <item row="2" column="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="7" column="0" colspan="2">
+           <widget class="QPushButton" name="pushButtonFinishExamination">
+            <property name="text">
+             <string>finish</string>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="5" column="0" colspan="2">
-           <widget class="QPlainTextEdit" name="plainTextEdit"/>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -338,8 +309,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>491</width>
-        <height>341</height>
+        <width>547</width>
+        <height>306</height>
        </rect>
       </property>
       <attribute name="label">
@@ -388,6 +359,29 @@
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;www.michaelbach.de/misc/fat1/index-de.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Visus Test Wrapper by Thomas Peschel&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextBrowserInteraction</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;www.michaelbach.de/misc/fat1/index-de.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Visus Test by Prof. Michael Bach&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
     </widget>
    </item>
   </layout>
