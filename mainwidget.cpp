@@ -10,6 +10,16 @@ MainWidget::MainWidget(QWidget *parent) :
 	QObject::connect( ui->pushButtonNewExamination, SIGNAL(	released( ) ), this, SLOT(slotNewExamination( ) ) );
     QObject::connect( ui->lineEditSICVal, SIGNAL( textChanged( QString ) ), this, SLOT( slotScanSIC( ) ) );
     QObject::connect( ui->pushButtonFinishExamination, SIGNAL( released( ) ), this, SLOT( slotFinishExamination( ) ) );
+    QObject::connect( ui->pushButtonODWithoutTrialFrame, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+    QObject::connect( ui->pushButtonOSWithoutTrialFrame, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+    QObject::connect( ui->pushButtonODWithTrialFrame, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+    QObject::connect( ui->pushButtonOSWithTrialFrame, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+    QObject::connect( ui->pushButtonODWithHoleAperture, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+    QObject::connect( ui->pushButtonOSWithHoleAperture, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
+
+    cb = new QClipboard(  );
+
+    connect( &cb, SIGNAL(changed(QClipboard::Mode)),ui->plainTextEdit,SLOT(appendPlainText(QString)));
 }
 
 MainWidget::~MainWidget()
@@ -41,4 +51,23 @@ void MainWidget::slotScanSIC()
 void MainWidget::slotFinishExamination( )
 {
     ui->toolBox->setCurrentIndex( 3 );
+}
+
+void MainWidget::slotStartFrACT( )
+{
+    //QClipboard *cb = QApplication::clipboard( );
+
+
+    QProcess *fract = new QProcess( this );
+
+    QStringList arg;
+
+    arg << "FrACT3.9.8.swf";
+
+    fract->setWorkingDirectory ( "" );
+    fract->startDetached ( "flashplayer_29_sa.exe", arg );
+//    fract->startDetached ( "FrACT3.10.0b.exe", arg );
+    fract->waitForFinished ( );
+
+    ui->plainTextEdit->appendPlainText( cb.text( QClipboard::Clipboard ) );
 }

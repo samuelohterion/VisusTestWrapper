@@ -2,6 +2,8 @@
 #define MAINWIDGET_HPP
 
 #include <QWidget>
+#include <QProcess>
+#include <QClipboard>
 
 namespace Ui {
 	class MainWidget;
@@ -14,6 +16,8 @@ class MainWidget : public QWidget
 	public:
 		explicit MainWidget(QWidget *parent = 0);
 		~MainWidget();
+    QClipboard
+    *cb;
 
 	private:
 		Ui::MainWidget *ui;
@@ -23,6 +27,7 @@ class MainWidget : public QWidget
 		void slotNewExamination( );
         void slotScanSIC( );
         void slotFinishExamination( );
+        void slotStartFrACT( );
 };
 
 #endif // MAINWIDGET_HPP
