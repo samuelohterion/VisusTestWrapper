@@ -16,8 +16,12 @@ class MainWidget : public QWidget
 	public:
 		explicit MainWidget(QWidget *parent = 0);
 		~MainWidget();
+
     QClipboard
     *cb;
+
+    QProcess
+    *proc;
 
 	private:
 		Ui::MainWidget *ui;
@@ -27,7 +31,8 @@ class MainWidget : public QWidget
 		void slotNewExamination( );
         void slotScanSIC( );
         void slotFinishExamination( );
-        void slotStartFrACT( );
+        void slotStartFrACT();
+        void slotFrACTFinished(QClipboard::Mode m);
 };
 
 #endif // MAINWIDGET_HPP

@@ -3,9 +3,11 @@
 
 MainWidget::MainWidget(QWidget *parent) :
 	QWidget(parent),
-	ui(new Ui::MainWidget)
+    ui(new Ui::MainWidget)
 {
 	ui->setupUi(this);
+
+    proc = 0;
 
 	QObject::connect( ui->pushButtonNewExamination, SIGNAL(	released( ) ), this, SLOT(slotNewExamination( ) ) );
     QObject::connect( ui->lineEditSICVal, SIGNAL( textChanged( QString ) ), this, SLOT( slotScanSIC( ) ) );
@@ -17,9 +19,9 @@ MainWidget::MainWidget(QWidget *parent) :
     QObject::connect( ui->pushButtonODWithHoleAperture, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
     QObject::connect( ui->pushButtonOSWithHoleAperture, SIGNAL( released( ) ), this, SLOT( slotStartFrACT( ) ) );
 
-    cb = new QClipboard(  );
+    cb = QApplication::clipboard( );
 
-    connect( &cb, SIGNAL(changed(QClipboard::Mode)),ui->plainTextEdit,SLOT(appendPlainText(QString)));
+    QObject::connect( cb, SIGNAL( changed( QClipboard::Mode ) ), this, SLOT( slotFrACTFinished( QClipboard::Mode ) ) );
 }
 
 MainWidget::~MainWidget()
@@ -53,21 +55,43 @@ void MainWidget::slotFinishExamination( )
     ui->toolBox->setCurrentIndex( 3 );
 }
 
-void MainWidget::slotStartFrACT( )
+void MainWidget::slotStartFrACT(  )
 {
-    //QClipboard *cb = QApplication::clipboard( );
+    if( proc ) delete proc;
 
-
-    QProcess *fract = new QProcess( this );
+    proc = new QProcess( );
 
     QStringList arg;
 
     arg << "FrACT3.9.8.swf";
 
-    fract->setWorkingDirectory ( "" );
-    fract->startDetached ( "flashplayer_29_sa.exe", arg );
-//    fract->startDetached ( "FrACT3.10.0b.exe", arg );
-    fract->waitForFinished ( );
 
-    ui->plainTextEdit->appendPlainText( cb.text( QClipboard::Clipboard ) );
+    proc->setWorkingDirectory ( ".\\" );
+    proc->startDetached ( "flashplayer_29_sa.exe", arg );
+//    fract->startDetached ( "FrACT3.10.0b.exe", arg );
+//    proc->waitForFinished ( );
+
+//    QClipboard *cb = QApplication::clipboard( );
+
+//    ui->plainTextEdit->appendPlainText( cb->text( QClipboard::Clipboard ) );
+
+//    delete fract;
 }
+
+void MainWidget::slotFrACTFinished( QClipboard::Mode m )
+{
+    proc->blockSignals( true );
+
+    cb->blockSignals( true );
+
+    ui->plainTextEdit->blockSignals( true );
+    ui->plainTextEdit->appendPlainText( cb->text( QClipboard::Clipboard) );
+    ui->plainTextEdit->blockSignals( false );
+
+    //cb->clear( );
+
+    cb->blockSignals( false );
+    proc->blockSignals( false );
+}
+
+
