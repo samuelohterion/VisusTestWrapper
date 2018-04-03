@@ -1,5 +1,8 @@
 #include "mainwidget.hpp"
 #include "ui_mainwidget.h"
+#include <QString>
+#include <iostream>
+
 
 MainWidget::MainWidget(QWidget *parent) :
 	QWidget(parent),
@@ -57,7 +60,9 @@ void MainWidget::slotFinishExamination( )
 
 void MainWidget::slotStartFrACT(  )
 {
-    if( proc ) delete proc;
+    if( proc )
+
+        delete proc;
 
     proc = new QProcess( );
 
@@ -65,9 +70,9 @@ void MainWidget::slotStartFrACT(  )
 
     arg << "FrACT3.9.8.swf";
 
-
-    proc->setWorkingDirectory ( ".\\" );
-    proc->startDetached ( "flashplayer_29_sa.exe", arg );
+    proc->setWorkingDirectory ( "." );
+//    proc->startDetached ( "flashplayer_29_sa.exe", arg ); //windows
+    proc->startDetached ( "./flashplayer", arg ); //linux
 //    fract->startDetached ( "FrACT3.10.0b.exe", arg );
 //    proc->waitForFinished ( );
 
@@ -80,12 +85,17 @@ void MainWidget::slotStartFrACT(  )
 
 void MainWidget::slotFrACTFinished( QClipboard::Mode m )
 {
-    proc->blockSignals( true );
+    //proc->blockSignals( true );
 
     cb->blockSignals( true );
 
+    QString
+    txt = cb->text( m );
+
+    std::cout << txt.toStdString( ) << std::endl;
+
     ui->plainTextEdit->blockSignals( true );
-    ui->plainTextEdit->appendPlainText( cb->text( QClipboard::Clipboard) );
+    ui->plainTextEdit->appendPlainText( txt );
     ui->plainTextEdit->blockSignals( false );
 
     //cb->clear( );
